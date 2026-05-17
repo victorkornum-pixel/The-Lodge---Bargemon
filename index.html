@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Lodge · Chäteau Bargemon</title>
+<meta name="description" content="Eksklusivt ferieophold i hjertet af Provence. Book The Lodge Chäteau Bargemon — pool, tennisbane og alt hvad du behøver.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--dark:#1A1510;--gold:#B8942B;--gold-lt:#D4AE3A;--cream:#F7F3EC;--white:#fff;--text:#2C2417;--muted:#7A6E62;--border:#E5DDD3;--alt:#EFE9DF;}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--text);line-height:1.6;}
+
+nav{position:sticky;top:0;z-index:100;background:rgba(247,243,236,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;padding:16px 48px;}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;letter-spacing:.04em;color:var(--dark);text-decoration:none;}
+.btn-admin{background:transparent;border:1px solid var(--border);color:var(--muted);padding:6px 16px;border-radius:6px;font-family:'Outfit',sans-serif;font-size:11px;letter-spacing:.06em;transition:all .2s;text-decoration:none;display:inline-block;}
+.btn-admin:hover{border-color:var(--gold);color:var(--gold);}
+
+.hero{background:var(--dark);min-height:90vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:80px 24px;}
+.hero-badge{display:inline-block;background:rgba(184,148,43,.14);border:1px solid rgba(184,148,43,.35);color:#D4AE3A;padding:5px 18px;border-radius:20px;font-size:10px;letter-spacing:.15em;text-transform:uppercase;margin-bottom:28px;}
+h1.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(44px,8vw,88px);font-weight:300;color:var(--cream);line-height:1.05;margin-bottom:12px;}
+h1.hero-title em{font-style:italic;color:#D4AE3A;}
+.hero-sub{font-size:15px;color:rgba(247,243,236,.5);font-weight:300;margin-bottom:48px;letter-spacing:.04em;}
+.hero-stats{display:flex;justify-content:center;margin-bottom:52px;}
+.hero-stat{padding:0 36px;text-align:center;}
+.hero-stat+.hero-stat{border-left:1px solid rgba(247,243,236,.12);}
+.stat-val{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:300;color:var(--cream);display:block;}
+.stat-lbl{font-size:9px;text-transform:uppercase;letter-spacing:.14em;color:rgba(247,243,236,.38);margin-top:4px;}
+.btn-cta{display:inline-block;background:var(--gold);color:var(--dark);padding:15px 44px;border-radius:6px;text-decoration:none;font-weight:500;font-size:13px;letter-spacing:.07em;text-transform:uppercase;transition:background .2s;border:none;cursor:pointer;font-family:'Outfit',sans-serif;}
+.btn-cta:hover{background:var(--gold-lt);}
+
+section{padding:80px 24px;}
+.container{max-width:1080px;margin:0 auto;}
+.sec-label{font-size:9px;text-transform:uppercase;letter-spacing:.16em;color:var(--gold);font-weight:600;margin-bottom:10px;}
+.sec-h2{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,4vw,44px);font-weight:400;color:var(--dark);margin-bottom:44px;line-height:1.15;}
+
+.amenities-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:14px;}
+.amenity{display:flex;align-items:center;gap:14px;font-size:14px;}
+.am-icon{width:32px;height:32px;background:rgba(184,148,43,.1);border:1px solid rgba(184,148,43,.22);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;}
+
+.rules-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.rule-card{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:30px;}
+.rule-card-lbl{font-size:9px;text-transform:uppercase;letter-spacing:.14em;color:var(--gold);font-weight:600;margin-bottom:20px;}
+.price-big{font-family:'Cormorant Garamond',serif;font-size:40px;font-weight:300;color:var(--dark);line-height:1;margin-bottom:4px;}
+.price-note{font-size:12px;color:var(--muted);}
+.hdivider{height:1px;background:var(--border);margin:18px 0;}
+.rule-list{list-style:none;}
+.rule-list li{font-size:13px;padding:8px 0;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px;}
+.rule-list li:last-child{border-bottom:none;}
+.rule-list li::before{content:'';width:4px;height:4px;background:var(--gold);border-radius:50%;flex-shrink:0;}
+
+.booking-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start;}
+.cal-card{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:24px;}
+.cal-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;}
+.cal-month-lbl{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:400;}
+.cal-nav-btn{background:none;border:1px solid var(--border);border-radius:6px;width:36px;height:36px;cursor:pointer;font-size:20px;color:var(--muted);display:flex;align-items:center;justify-content:center;transition:all .2s;padding:0;}
+.cal-nav-btn:hover{border-color:var(--gold);color:var(--gold);}
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-bottom:12px;}
+.cal-dh{text-align:center;font-size:9px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);padding-bottom:10px;font-weight:500;}
+
+/* Calendar day states via classes only — no re-render on hover */
+.cal-day{display:flex;align-items:center;justify-content:center;height:40px;border-radius:8px;font-size:13px;user-select:none;transition:background .1s;cursor:pointer;}
+.cal-day.is-past{color:#CCC4B8;cursor:default;pointer-events:none;}
+.cal-day.is-booked{background:rgba(200,80,60,.08);color:#D4857A;cursor:not-allowed;pointer-events:none;text-decoration:line-through;}
+.cal-day.is-selected{background:var(--gold);color:var(--dark);font-weight:600;}
+.cal-day.is-range{background:rgba(184,148,43,.15);}
+.cal-day.is-available:hover{background:rgba(184,148,43,.12);}
+
+.cal-legend{display:flex;gap:18px;font-size:11px;color:var(--muted);margin-top:4px;}
+.leg-dot{width:8px;height:8px;border-radius:50%;display:inline-block;margin-right:5px;}
+.cal-hint{margin-top:12px;font-size:12px;color:var(--gold);font-style:italic;min-height:18px;}
+
+.form-card{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:24px;}
+.price-box{background:var(--dark);border-radius:10px;padding:20px;margin-bottom:20px;}
+.pb-dates{font-size:12px;color:rgba(247,243,236,.45);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+.pb-row{display:flex;justify-content:space-between;font-size:13px;color:rgba(247,243,236,.65);margin-bottom:5px;}
+.pb-total{display:flex;justify-content:space-between;font-size:18px;font-weight:500;color:var(--cream);padding-top:12px;border-top:1px solid rgba(247,243,236,.14);margin-top:10px;}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px;}
+.ff{display:flex;flex-direction:column;gap:6px;}
+.ff.full{grid-column:1/-1;}
+label{font-size:9px;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-weight:500;}
+input,select,textarea{border:1px solid var(--border);border-radius:8px;padding:10px 14px;font-family:'Outfit',sans-serif;font-size:13px;color:var(--text);background:var(--white);outline:none;transition:border-color .2s;width:100%;}
+input:focus,select:focus,textarea:focus{border-color:var(--gold);}
+textarea{resize:vertical;min-height:80px;}
+.btn-submit{width:100%;background:var(--dark);color:var(--white);border:none;padding:14px;border-radius:8px;font-family:'Outfit',sans-serif;font-weight:500;font-size:14px;cursor:pointer;transition:opacity .2s;letter-spacing:.04em;}
+.btn-submit:disabled{opacity:.38;cursor:not-allowed;}
+.form-note{font-size:11px;color:var(--muted);text-align:center;margin-top:10px;}
+
+.success-wrap{text-align:center;padding:72px 32px;background:var(--white);border:1px solid var(--border);border-radius:14px;max-width:480px;margin:0 auto;}
+.suc-icon{font-size:52px;margin-bottom:20px;}
+.suc-title{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:400;margin-bottom:12px;}
+.suc-text{font-size:14px;color:var(--muted);line-height:1.8;margin-bottom:28px;}
+
+footer{background:var(--dark);color:rgba(247,243,236,.5);padding:48px 24px;text-align:center;}
+.ft-logo{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:var(--cream);margin-bottom:8px;letter-spacing:.06em;}
+.ft-info{font-size:12px;letter-spacing:.06em;}
+
+@media(max-width:780px){
+  nav{padding:14px 20px;}
+  .rules-grid,.booking-grid{grid-template-columns:1fr;}
+  .hero-stats{flex-direction:column;gap:20px;}
+  .hero-stat+.hero-stat{border-left:none;border-top:1px solid rgba(247,243,236,.1);padding-top:20px;}
+  .form-grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="#">The Lodge · Chäteau Bargemon</a>
+  <a class="btn-admin" href="https://airtable.com/appDN59Ibxt12g9qq/tblicBjot4zokKehP" target="_blank">Admin →</a>
+</nav>
+
+<header class="hero">
+  <div>
+    <div class="hero-badge">📍 Bargemon, Provence, France</div>
+    <h1 class="hero-title">The Lodge<br><em>Chäteau Bargemon</em></h1>
+    <p class="hero-sub">An exclusive retreat in the heart of Provence</p>
+    <div class="hero-stats">
+      <div class="hero-stat"><span class="stat-val">8</span><span class="stat-lbl">Gæster</span></div>
+      <div class="hero-stat"><span class="stat-val">4</span><span class="stat-lbl">Soveværelser</span></div>
+      <div class="hero-stat"><span class="stat-val">2</span><span class="stat-lbl">Badeværelser</span></div>
+    </div>
+    <a href="#booking" class="btn-cta">Book dit ophold</a>
+  </div>
+</header>
+
+<section>
+  <div class="container">
+    <p class="sec-label">Faciliteter</p>
+    <h2 class="sec-h2">Alt hvad du har brug for</h2>
+    <div class="amenities-grid" id="amenities"></div>
+  </div>
+</section>
+
+<section style="background:var(--alt);">
+  <div class="container">
+    <p class="sec-label">Priser & regler</p>
+    <h2 class="sec-h2">Hvad koster det?</h2>
+    <div class="rules-grid">
+      <div class="rule-card">
+        <p class="rule-card-lbl">Ugepris</p>
+        <p class="price-big">20.000 <span style="font-size:20px">kr.</span></p>
+        <p class="price-note">per uge (7 nætter)</p>
+        <div class="hdivider"></div>
+        <p class="price-note">Rengøringsgebyr: 1.500 kr.</p>
+        <p class="price-note" style="margin-top:5px">Depositum: ikke påkrævet</p>
+      </div>
+      <div class="rule-card">
+        <p class="rule-card-lbl">Husregler</p>
+        <ul class="rule-list">
+          <li>Minimum 7 nætter</li>
+          <li>Check-in fra kl. 13:00</li>
+          <li>Check-out senest kl. 11:00</li>
+          <li>Max 8 gæster</li>
+        </ul>
+      </div>
+      <div class="rule-card">
+        <p class="rule-card-lbl">Afbestilling</p>
+        <ul class="rule-list"><li>Aftales individuelt ved booking</li></ul>
+        <p style="font-size:12px;color:var(--muted);margin-top:16px;line-height:1.7;">Kontakt os ved spørgsmål om afbestilling.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="booking">
+  <div class="container">
+    <p class="sec-label">Reservér</p>
+    <h2 class="sec-h2">Book dit ophold</h2>
+    <p style="color:var(--muted);margin-top:-32px;margin-bottom:40px;font-size:14px;">Vælg datoer og send en forespørgsel — vi vender tilbage inden 24 timer.</p>
+    <div id="booking-root"></div>
+  </div>
+</section>
+
+<footer>
+  <p class="ft-logo">The Lodge · Chäteau Bargemon</p>
+  <p class="ft-info">Bargemon, Provence, France</p>
+</footer>
+
+<script>
+/* ── Config ──────────────────────────────────────────────── */
+const AT = {
+  token: "patQTFXPW7naNRzA4.005af7b8329441876e48862a5b8a1acc7fc9b6072bf4696cc0ad8d9a27c90289",
+  base:  "appDN59Ibxt12g9qq",
+  table: "tblicBjot4zokKehP",
+  url()  { return `https://api.airtable.com/v0/${this.base}/${this.table}`; },
+  hdr()  { return { "Authorization": `Bearer ${this.token}`, "Content-Type": "application/json" }; }
+};
+const CFG = {
+  priceWeek: 20000, cleanFee: 1500, minNights: 7,
+  email: "kontakt@thelodgechateaubargemon.com",
+  amenities: [
+    {icon:"🏊",label:"Privat pool"},{icon:"📶",label:"WiFi"},
+    {icon:"🔥",label:"Grill"},{icon:"🎾",label:"Tennisbane"},
+    {icon:"🛏",label:"4 soveværelser"},{icon:"🛁",label:"2 badeværelser"},
+    {icon:"👥",label:"Op til 8 gæster"},{icon:"🅿️",label:"Parkering"},
+  ]
+};
+const MO = ["Januar","Februar","Marts","April","Maj","Juni","Juli","August","September","Oktober","November","December"];
+const WD = ["Ma","Ti","On","To","Fr","Lø","Sø"];
+
+/* ── Helpers ─────────────────────────────────────────────── */
+function toKey(d) {
+  return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");
+}
+function fromKey(k) { return new Date(k+"T12:00:00"); }
+function addDays(d,n) { const r=new Date(d); r.setDate(r.getDate()+n); return r; }
+function dateRange(a,b) { const r=[]; let c=new Date(a); while(c<b){r.push(new Date(c));c=addDays(c,1);} return r; }
+function kr(n) { return n.toLocaleString("da-DK")+" kr."; }
+function fmtS(d) { return d ? d.toLocaleDateString("da-DK",{day:"numeric",month:"short"}) : "?"; }
+function esc(s) { return String(s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/"/g,"&quot;"); }
+
+/* ── State ───────────────────────────────────────────────── */
+const S = {
+  bookedRanges: [], loading: true,
+  month: new Date(new Date().getFullYear(), new Date().getMonth(), 1),
+  ci: null, co: null, picking: "ci",
+  form: { name:"", email:"", phone:"", guests:2, msg:"" },
+  done: false, busy: false
+};
+
+/* ── Amenities ───────────────────────────────────────────── */
+document.getElementById("amenities").innerHTML = CFG.amenities
+  .map(a=>`<div class="amenity"><div class="am-icon">${a.icon}</div><span>${a.label}</span></div>`).join("");
+
+/* ── Airtable ────────────────────────────────────────────── */
+async function loadBookedDates() {
+  try {
+    const f = encodeURIComponent(`{Status}="Godkendt"`);
+    const res = await fetch(`${AT.url()}?filterByFormula=${f}&fields[]=Check-in&fields[]=Check-out`,
+      { headers: {"Authorization":`Bearer ${AT.token}`} });
+    const data = await res.json();
+    S.bookedRanges = (data.records||[])
+      .map(r=>({ci:r.fields["Check-in"],co:r.fields["Check-out"]}))
+      .filter(r=>r.ci&&r.co);
+  } catch(e) { console.warn("Airtable:",e); }
+  S.loading = false;
+  render();
+}
+
+function bookedSet() {
+  return new Set(S.bookedRanges.flatMap(b=>dateRange(fromKey(b.ci),fromKey(b.co)).map(toKey)));
+}
+
+function calcPrice(ci,co) {
+  if(!ci||!co) return {nights:0,rent:0,clean:0,total:0};
+  const nights = dateRange(ci,co).length;
+  const rent = Math.round((nights/7)*CFG.priceWeek);
+  return {nights, rent, clean:CFG.cleanFee, total:rent+CFG.cleanFee};
+}
+
+/* ── Render calendar only (no full re-render on hover) ────── */
+function renderCalendar() {
+  const grid = document.getElementById("cal-grid");
+  const hint = document.getElementById("cal-hint");
+  if(!grid) return;
+
+  const bs = bookedSet();
+  const yr = S.month.getFullYear(), mo = S.month.getMonth();
+  const today = new Date(); today.setHours(0,0,0,0);
+  const firstDow = (new Date(yr,mo,1).getDay()+6)%7;
+  const lastDate = new Date(yr,mo+1,0).getDate();
+
+  // Update month label
+  const lbl = document.getElementById("cal-month-lbl");
+  if(lbl) lbl.textContent = MO[mo]+" "+yr;
+
+  // Build cells
+  let html = WD.map(d=>`<div class="cal-dh">${d}</div>`).join("");
+  for(let i=0;i<firstDow;i++) html+=`<div></div>`;
+  for(let d=1;d<=lastDate;d++) {
+    const date = new Date(yr,mo,d,12,0,0);
+    const key = toKey(date);
+    const isPast = date < today;
+    const isBooked = bs.has(key);
+    const isCI = S.ci && toKey(S.ci)===key;
+    const isCO = S.co && toKey(S.co)===key;
+    const inRange = S.ci && S.co && date>S.ci && date<S.co;
+
+    let cls = "cal-day";
+    if(isPast)        cls += " is-past";
+    else if(isBooked) cls += " is-booked";
+    else if(isCI||isCO) cls += " is-selected";
+    else if(inRange)  cls += " is-range";
+    else              cls += " is-available";
+
+    html += `<div class="${cls}" data-key="${key}">${d}</div>`;
+  }
+  grid.innerHTML = html;
+
+  // Update hint
+  if(hint) {
+    hint.textContent = S.loading ? "Henter ledige datoer..."
+      : !S.ci ? "Vælg check-in dato"
+      : !S.co ? "Vælg check-out dato"
+      : calcPrice(S.ci,S.co).nights < CFG.minNights ? `Minimum ${CFG.minNights} nætter krævet`
+      : "";
+  }
+}
+
+/* ── Full render (only on state changes, not hover) ──────── */
+function render() {
+  const root = document.getElementById("booking-root");
+  if(!root) return;
+
+  if(S.done) {
+    root.innerHTML = `
+      <div class="success-wrap">
+        <div class="suc-icon">✉️</div>
+        <h3 class="suc-title">Tak for din forespørgsel!</h3>
+        <p class="suc-text">Vi har modtaget din bookingforespørgsel og vender tilbage inden 24 timer på den email du angav.</p>
+        <button class="btn-cta" id="btn-reset">Ny forespørgsel</button>
+      </div>`;
+    document.getElementById("btn-reset").addEventListener("click", resetForm);
+    return;
+  }
+
+  const price = calcPrice(S.ci, S.co);
+  const valid = price.nights >= CFG.minNights;
+  const canSubmit = valid && S.form.name && S.form.email && !S.busy && !S.loading;
+
+  const priceHTML = S.ci ? `
+    <div class="price-box">
+      <div class="pb-dates">${fmtS(S.ci)} &rarr; ${fmtS(S.co)}</div>
+      ${S.co && price.nights>0 ? `
+        <div class="pb-row"><span>${price.nights} nætter</span><span>${kr(price.rent)}</span></div>
+        <div class="pb-row"><span>Rengøring</span><span>${kr(price.clean)}</span></div>
+        <div class="pb-total"><span>Total</span><span>${kr(price.total)}</span></div>` : ""}
+    </div>` : "";
+
+  root.innerHTML = `
+    <div class="booking-grid">
+      <div class="cal-card">
+        <div class="cal-hdr">
+          <button class="cal-nav-btn" id="btn-prev">&#8249;</button>
+          <span id="cal-month-lbl" class="cal-month-lbl"></span>
+          <button class="cal-nav-btn" id="btn-next">&#8250;</button>
+        </div>
+        <div class="cal-grid" id="cal-grid"></div>
+        <div class="cal-legend">
+          <span><span class="leg-dot" style="background:var(--gold)"></span>Valgt</span>
+          <span><span class="leg-dot" style="background:rgba(184,148,43,.25)"></span>Periode</span>
+          <span><span class="leg-dot" style="background:rgba(200,80,60,.25)"></span>Optaget</span>
+        </div>
+        <div class="cal-hint" id="cal-hint"></div>
+      </div>
+      <div class="form-card">
+        ${priceHTML}
+        <div class="form-grid">
+          <div class="ff"><label for="f-name">Navn *</label><input id="f-name" type="text" value="${esc(S.form.name)}" placeholder="Dit fulde navn"></div>
+          <div class="ff"><label for="f-email">Email *</label><input id="f-email" type="email" value="${esc(S.form.email)}" placeholder="din@email.dk"></div>
+          <div class="ff"><label for="f-phone">Telefon</label><input id="f-phone" type="tel" value="${esc(S.form.phone)}" placeholder="+45 12 34 56 78"></div>
+          <div class="ff"><label for="f-guests">Antal gæster</label>
+            <select id="f-guests">
+              ${Array.from({length:8},(_,i)=>`<option value="${i+1}" ${S.form.guests===i+1?"selected":""}>${i+1} ${i===0?"gæst":"gæster"}</option>`).join("")}
+            </select>
+          </div>
+          <div class="ff full"><label for="f-msg">Besked (valgfri)</label>
+            <textarea id="f-msg" placeholder="Særlige ønsker eller spørgsmål...">${esc(S.form.msg)}</textarea>
+          </div>
+        </div>
+        <button class="btn-submit" id="btn-submit" ${canSubmit?"":"disabled"}>${S.busy?"Sender...":"Send bookingforespørgsel"}</button>
+        <p class="form-note">Vi svarer inden 24 timer · ${CFG.email}</p>
+      </div>
+    </div>`;
+
+  // Render calendar cells
+  renderCalendar();
+
+  // Nav
+  document.getElementById("btn-prev").addEventListener("click", () => {
+    S.month = new Date(S.month.getFullYear(), S.month.getMonth()-1, 1);
+    renderCalendar();
+  });
+  document.getElementById("btn-next").addEventListener("click", () => {
+    S.month = new Date(S.month.getFullYear(), S.month.getMonth()+1, 1);
+    renderCalendar();
+  });
+
+  // Calendar clicks — simple direct listener, NO render on hover
+  document.getElementById("cal-grid").addEventListener("click", function(e) {
+    const day = e.target.closest(".cal-day.is-available, .cal-day.is-range");
+    if(!day) return;
+    const key = day.dataset.key;
+    if(!key) return;
+    const date = fromKey(key);
+    if(S.picking === "ci") {
+      S.ci = date; S.co = null; S.picking = "co";
+    } else {
+      if(date <= S.ci) { S.ci=date; S.co=null; }
+      else if(dateRange(S.ci,date).some(d=>bookedSet().has(toKey(d)))) return;
+      else { S.co=date; S.picking="ci"; }
+    }
+    render(); // only re-render on actual click
+  });
+
+  // Form
+  document.getElementById("btn-submit").addEventListener("click", submitForm);
+  ["name","email","phone","msg"].forEach(k => {
+    const el = document.getElementById(`f-${k}`);
+    if(el) el.addEventListener("input", e => { S.form[k]=e.target.value; });
+  });
+  const gs = document.getElementById("f-guests");
+  if(gs) gs.addEventListener("change", e => { S.form.guests=Number(e.target.value); });
+}
+
+/* ── Submit ──────────────────────────────────────────────── */
+async function submitForm() {
+  const price = calcPrice(S.ci, S.co);
+  if(price.nights<CFG.minNights||!S.form.name||!S.form.email) return;
+  S.busy=true; render();
+  try {
+    const res = await fetch(AT.url(), {
+      method:"POST", headers:AT.hdr(),
+      body: JSON.stringify({ fields: {
+        "Navn":S.form.name, "Email":S.form.email, "Telefon":S.form.phone,
+        "Gæster":S.form.guests, "Check-in":toKey(S.ci), "Check-out":toKey(S.co),
+        "Nætter":price.nights, "Total pris":price.total,
+        "Besked":S.form.msg, "Status":"Afventer"
+      }})
+    });
+    if(!res.ok) throw new Error("HTTP "+res.status);
+    S.busy=false; S.done=true;
+    S.form={name:"",email:"",phone:"",guests:2,msg:""};
+    render();
+  } catch(e) {
+    console.error(e); S.busy=false;
+    alert("Der opstod en fejl — prøv igen eller kontakt os direkte.");
+    render();
+  }
+}
+
+function resetForm() {
+  S.done=false; S.ci=null; S.co=null; S.picking="ci";
+  S.loading=true; render(); loadBookedDates();
+}
+
+/* ── Init ────────────────────────────────────────────────── */
+render();
+loadBookedDates();
+</script>
+</body>
+</html>
